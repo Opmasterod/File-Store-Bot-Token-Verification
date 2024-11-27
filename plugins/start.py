@@ -239,4 +239,23 @@ async def send_text(client: Bot, message: Message):
                 blocked += 1
             except InputUserDeactivated:
                 await del_user(chat_id)
-                deleted
+                deleted += 1
+            except:
+                unsuccessful += 1
+                pass
+            total += 1
+
+        status = f"""<b><u>Broadcast Completed</u>
+
+Total Users: <code>{total}</code>
+Successful: <code>{successful}</code>
+Blocked Users: <code>{blocked}</code>
+Deleted Accounts: <code>{deleted}</code>
+Unsuccessful: <code>{unsuccessful}</code></b>"""
+
+        return await pls_wait.edit(status)
+
+    else:
+        msg = await message.reply(REPLY_ERROR)
+        await asyncio.sleep(8)
+        await msg.delete()
