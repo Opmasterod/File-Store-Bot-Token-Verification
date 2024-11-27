@@ -108,9 +108,9 @@ async def start_command(client: Client, message: Message):
                     caption = "" if not msg.caption else msg.caption.html
 
                 if DISABLE_CHANNEL_BUTTON:
-                    reply_markup = msg.reply_markup
+                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("CHECK FOR MORE", url=f'https://t.me/HIDDEN_OFFICIALS_2/3')]])
                 else:
-                    reply_markup = None
+                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("CHECK FOR MORE", url=f'https://t.me/HIDDEN_OFFICIALS_2/3')]])
 
                 try:
                     snt_msg = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
