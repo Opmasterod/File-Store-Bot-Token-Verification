@@ -58,11 +58,11 @@ async def start_command(client: Client, message: Message):
         if "verify_" in message.text:
             _, token = message.text.split("_", 1)
             if verify_status['verify_token'] != token:
-                return await message.reply("Your token is invalid or Expired. Try again by clicking /start")
+                return await message.reply(f"<b>❗Aapke bot ka verify token expire ho gaya hai.\n\n/start pe click karke new token lo aur apne aap ko verify karo unlimited use ke liye bina kisi error ke.\n\nAgar koi problem ho toh contact karo - @HACKHEISTBOT ❤</b>")
             await update_verify_status(id, is_verified=True, verified_time=time.time())
             if verify_status["link"] == "":
                 reply_markup = None
-            await message.reply(f"Your token successfully verified and valid for: 24 Hour", reply_markup=reply_markup, protect_content=False, quote=True)
+            await message.reply(f"", reply_markup=reply_markup, protect_content=False, quote=True)
         elif len(message.text) > 7 and verify_status['is_verified']:
             try:
                 base64_string = message.text.split(" ", 1)[1]
