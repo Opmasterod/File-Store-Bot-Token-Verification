@@ -28,12 +28,10 @@ from config import (
     OWNER_ID,
 )
 from helper_func import subscribed, encode, decode, get_messages, get_shortlink, get_verify_status, update_verify_status, get_exp_time
+from config import TIME
 from database.database import add_user, del_user, full_userbase, present_user
 from shortzy import Shortzy
 
-"""add time in seconds for waiting before delete 
-1 min = 60, 2 min = 60 × 2 = 120, 5 min = 60 × 5 = 300"""
-# SECONDS = int(os.getenv("SECONDS", "1200"))
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -126,15 +124,16 @@ async def start_command(client: Client, message: Message):
                 except:
                     pass
 
-            SD = await message.reply_text("Baka! Files will be deleted After 300 seconds. Save them to the Saved Message now!")
-            await asyncio.sleep(300)
-
+        if SECONDS != 0:
+            notification_msg = await message.reply(f"<b>‼️Forward the Files to Saved Messages or somewhere else before Downloading it.</b>\n<b>It will get Deleted after {get_exp_time(SECONDS)}.‼️</b>")
+            await asyncio.sleep(SECONDS)
             for snt_msg in snt_msgs:
-                try:
-                    await snt_msg.delete()
-                    await SD.delete()
-                except:
-                    pass
+                try:    
+                    await snt_msg.delete()  
+                except: 
+                    pass    
+            await notification_msg.delete()  
+            return
 
         elif verify_status['is_verified']:
             reply_markup = InlineKeyboardMarkup(
