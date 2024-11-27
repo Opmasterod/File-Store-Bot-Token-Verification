@@ -62,7 +62,7 @@ async def start_command(client: Client, message: Message):
             await update_verify_status(id, is_verified=True, verified_time=time.time())
             if verify_status["link"] == "":
                 reply_markup = None
-            await message.reply(f"", reply_markup=reply_markup, protect_content=False, quote=True)
+            await message.reply(f"<b>Welcome in our unlimited plan 🥰 !!</b>\n\n<b><blockquote>Ab aap bot ko bina kisi problem ke 30 ghante ke liye unlimited use kar sakte hain.\n\n30 ghante baad, bot ko unlimited use karne ke liye aapko fir se token link open karke verify karna hoga, next 30 ghante ke liye.\n\nDhanyawad 🙏🙏</blockquote><b>\n\n<b>Agar koi samasya ho toh contact kare @HACKHEISTBOT pe</b>", reply_markup=reply_markup, protect_content=False, quote=True)
         elif len(message.text) > 7 and verify_status['is_verified']:
             try:
                 base64_string = message.text.split(" ", 1)[1]
@@ -108,9 +108,9 @@ async def start_command(client: Client, message: Message):
                     caption = "" if not msg.caption else msg.caption.html
 
                 if DISABLE_CHANNEL_BUTTON:
-                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("CHECK FOR MORE", url='https://t.me/HIDDEN_OFFICIALS_2/3')]])
+                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("𝗠𝗢𝗥𝗘 𝗪𝗘𝗕𝗦𝗜𝗧𝗘𝗦", url='https://t.me/HIDDEN_OFFICIALS_2/3')]])
                 else:
-                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("CHECK FOR MORE", url='https://t.me/HIDDEN_OFFICIALS_2/3')]])
+                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("𝗠𝗢𝗥𝗘 𝗪𝗘𝗕𝗦𝗜𝗧𝗘𝗦", url='https://t.me/HIDDEN_OFFICIALS_2/3')]])
 
                 try:
                     snt_msg = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
@@ -135,8 +135,8 @@ async def start_command(client: Client, message: Message):
                 return
         elif verify_status['is_verified']:
             reply_markup = InlineKeyboardMarkup(
-                [[InlineKeyboardButton("⚡️ ᴀʙᴏᴜᴛ", callback_data="about"),
-                  InlineKeyboardButton('🍁 sᴇʀɪᴇsғʟɪx', url='https://t.me/Team_Netflix/40')]]
+                [[InlineKeyboardButton('⚡️ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠', url='https://t.me/Hidden_officials_2'),
+                  InlineKeyboardButton('🍁 𝗬𝗢𝗨𝗧𝗨𝗕𝗘', url='https://youtube.com/@TEAM_OPMASTER')]]
             )
             await message.reply_text(
                 text=START_MSG.format(
@@ -159,10 +159,10 @@ async def start_command(client: Client, message: Message):
                 await update_verify_status(id, verify_token=token, link="")
                 link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API, f'https://telegram.dog/{client.username}?start=verify_{token}')
                 btn = [
-                    [InlineKeyboardButton("• ᴏᴘᴇɴ ʟɪɴᴋ", url=link)],
-                    [InlineKeyboardButton('ᴛᴜᴛᴏʀɪᴀʟ •', url=TUT_VID)]
+                    [InlineKeyboardButton("𝗢𝗣𝗘𝗡 𝗩𝗘𝗥𝗜𝗙𝗜𝗬 𝗧𝗢𝗞𝗘𝗡", url=link)],
+                    [InlineKeyboardButton('𝐇𝐎𝐖 𝐓𝐎 𝐎𝐏𝐄𝐍 ?', url=TUT_VID)]
                 ]
-                await message.reply(f"Your Ads token is expired, refresh your token and try again.\n\nToken Timeout: {get_exp_time(VERIFY_EXPIRE)}\n\nWhat is the token?\n\nThis is an ads token. If you pass 1 ad, you can use the bot for 24 Hour after passing the ad.", reply_markup=InlineKeyboardMarkup(btn), protect_content=False, quote=True)
+                await message.reply(f"<b>Your Verify Token is Expired 😖,\nOpen new token for again use bot unlimited.\n\n☆NOTE - After {get_exp_time(VERIFY_EXPIRE)} again you have to verify yourself using token\n\n<b><blockquote>What is the Verify token ? 🤔\nIf you pass 1 token url then you are able to use bot unlimited and get any file/video unlimited times in this {get_exp_time(VERIFY_EXPIRE)} time interval</blockquote><b>\n\nSo open Link and use bot 😍\nIf any problem to open link then watch below HOW TO OPEN?? And still you have problem contact @HACKHEISTBOT ❤</b>", reply_markup=InlineKeyboardMarkup(btn), protect_content=False, quote=True)
 
 
 # ===================================================================================== #
