@@ -108,9 +108,9 @@ async def start_command(client: Client, message: Message):
                     caption = "" if not msg.caption else msg.caption.html
 
                 if DISABLE_CHANNEL_BUTTON:
-                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("𝗠𝗢𝗥𝗘 𝗪𝗘𝗕𝗦𝗜𝗧𝗘𝗦", url='https://t.me/HIDDEN_OFFICIALS_2/3')]])
+                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("𝗠𝗢𝗥𝗘 𝗪𝗘𝗕𝗦𝗜𝗧𝗘𝗦", url='https://t.me/HIDDEN_OFFICIALS_3/3')]])
                 else:
-                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("𝗠𝗢𝗥𝗘 𝗪𝗘𝗕𝗦𝗜𝗧𝗘𝗦", url='https://t.me/HIDDEN_OFFICIALS_2/3')]])
+                    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("𝗠𝗢𝗥𝗘 𝗪𝗘𝗕𝗦𝗜𝗧𝗘𝗦", url='https://t.me/HIDDEN_OFFICIALS_3/3')]])
 
                 try:
                     snt_msg = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML, reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
@@ -124,7 +124,7 @@ async def start_command(client: Client, message: Message):
                     pass
 
             if SECONDS != 0:
-                notification_msg = await message.reply(f"<b>‼️Forward the Files to Saved Messages or somewhere else before Downloading it.</b>\n<b>It will get Deleted after {get_exp_time(SECONDS)}.‼️</b>")
+                notification_msg = await message.reply(f"<b>‼️ Watch Fast Lectures and Notes before Deleted after {get_exp_time(SECONDS)}.\n\nIf Your Lecture Pdf Deleted Don't worry you again able to access 🥰\n\n Go back from where you got link and again click on link and get Again\n\n𝐒𝐨𝐫𝐫𝐲,𝐅𝐨𝐫 𝐭𝐡𝐢𝐬 𝐍𝐨𝐭 𝐅𝐨𝐫𝐰𝐚𝐫𝐝𝐢𝐧𝐠 𝐨𝐧 𝐚𝐧𝐝 𝐧𝐨𝐭 𝐟𝐨𝐫 𝐚 𝐟𝐮𝐥𝐥 𝐭𝐢𝐦𝐞 𝐛𝐜𝐳 𝐰𝐞 𝐠𝐨𝐭 𝐜𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭𝐬 😖😖 🙏</b>")
                 await asyncio.sleep(SECONDS)
                 for snt_msg in snt_msgs:
                     try:
@@ -135,7 +135,7 @@ async def start_command(client: Client, message: Message):
                 return
         elif verify_status['is_verified']:
             reply_markup = InlineKeyboardMarkup(
-                [[InlineKeyboardButton('⚡️ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠', url='https://t.me/Hidden_officials_2'),
+                [[InlineKeyboardButton('⚡️ 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠', url='https://t.me/Hidden_officials_3'),
                   InlineKeyboardButton('🍁 𝗬𝗢𝗨𝗧𝗨𝗕𝗘', url='https://youtube.com/@TEAM_OPMASTER')]]
             )
             await message.reply_text(
