@@ -157,7 +157,7 @@ async def start_command(client: Client, message: Message):
                 # TUT_VID = f"https://t.me/How_to_Download_7x/35"
                 token = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
                 await update_verify_status(id, verify_token=token, link="")
-                link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API, f'https://telegram.dog/{client.username}?start=verify_{token}')
+                link = await get_shortlink(SHORTLINK_URL, SHORTLINK_API, f'https://telegram.dog/VICTORY_CC_BOT?start=verify_{token}')
                 btn = [
                     [InlineKeyboardButton("𝗢𝗣𝗘𝗡 𝗩𝗘𝗥𝗜𝗙𝗜𝗬 𝗧𝗢𝗞𝗘𝗡", url=link)],
                     [InlineKeyboardButton('𝐇𝐎𝐖 𝐓𝐎 𝐎𝐏𝐄𝐍 ?', url=TUT_VID)]
